@@ -24,9 +24,9 @@ function Navbar() {
           <span>PMEstate</span>
         </a>
         <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
-        <a href="/">Agents</a>
+        <a href="/list">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/description">Description</a>
       </div>
       <div className="right">
         {currentUser ? (
@@ -56,8 +56,8 @@ function Navbar() {
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
           <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a>
+          <a href="/contact">Contact</a>
+          <a href="/description">Description</a>
           <a href="/login">Sign in</a>
           <a href="/register">Sign up</a>
         </div>
