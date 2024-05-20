@@ -1,4 +1,5 @@
 import "./singlePage.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
@@ -8,6 +9,7 @@ import DOMPurify from "dompurify";
 import Map from "../../components/map/Map";
 import Slider from "../../components/slidar/Slidar";
 import apiRequest from "../../lib/apiRequest";
+import { toast } from "react-toastify";
 
 function SinglePage() {
   const post = useLoaderData();
@@ -19,13 +21,39 @@ function SinglePage() {
     if (!currentUser) {
       navigate("/login");
     }
-    // AFTER REACT 19 UPDATE TO USEOPTIMISTIK HOOK
     setSaved((prev) => !prev);
     try {
       await apiRequest.post("/users/save", { postId: post.id });
     } catch (err) {
       console.log(err);
       setSaved((prev) => !prev);
+    }
+  };
+
+  const handleSendMessage = async () => {
+    if (!currentUser) {
+      navigate("/login");
+      return;
+    }
+
+    const receiverId = post.userId;
+
+    try {
+      const response = await apiRequest.post("/chats", { receiverId });
+
+      if (response.status === 200) {
+        console.log("Chat already exists:", response.data.chat);
+        toast.success("Agent already in Contact.");
+      } else if (response.status === 201) {
+        console.log("Chat created successfully:", response.data);
+        toast.success("Agent is ready to chat.");
+      } else {
+        console.warn("Unexpected response status:", response.status);
+        toast.error("Unexpected response status.");
+      }
+    } catch (error) {
+      console.error("Error creating chat:", error);
+      toast.error("Error in creating chat.");
     }
   };
 
@@ -141,7 +169,18 @@ function SinglePage() {
             <Map items={[post]} />
           </div>
           <div className="buttons">
-            <button>
+            <button
+              onClick={handleSendMessage}
+              style={{
+                backgroundColor:
+                  "transparent" /* Set initial background color */,
+                transition:
+                  "background-color 0.3s ease-in-out" /* Add smooth transition effect */,
+                animation: "bounce 0.5s" /* Add bounce animation */,
+                animationFillMode:
+                  "forwards" /* Keep the final state of animation */,
+              }}
+            >
               <img src="/chat.png" alt="" />
               Send a Message
             </button>

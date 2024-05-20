@@ -5,13 +5,13 @@ import { useContext, useState } from "react";
 
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
+import { toast } from "react-toastify";
 
 function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const { updateUser } = useContext(AuthContext);
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -19,7 +19,6 @@ function Login() {
     setIsLoading(true);
     setError("");
     const formData = new FormData(e.target);
-
     const username = formData.get("username");
     const password = formData.get("password");
 
@@ -30,14 +29,18 @@ function Login() {
       });
 
       updateUser(res.data);
-
       navigate("/");
+      // Show success toast
+      toast.success("Login successful!");
     } catch (err) {
       setError(err.response.data.message);
+      // Show error toast
+      toast.error("Login failed. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="login">
       <div className="formContainer">

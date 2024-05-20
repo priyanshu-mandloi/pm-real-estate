@@ -1,14 +1,15 @@
 import "./register.scss";
+import "react-toastify/dist/ReactToastify.css"; // Import default toast styles
 
 import { Link, useNavigate } from "react-router-dom";
 
 import apiRequest from "../../lib/apiRequest";
+import { toast } from "react-toastify"; // Import toast from react-toastify
 import { useState } from "react";
 
 function Register() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -29,12 +30,15 @@ function Register() {
       });
 
       navigate("/login");
+      toast.success("Registration successful!"); // Display success toast
     } catch (err) {
       setError(err.response.data.message);
+      toast.error("Registration failed. Please try again."); // Display error toast
     } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="registerPage">
       <div className="formContainer">
