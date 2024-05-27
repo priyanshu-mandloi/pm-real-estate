@@ -15,12 +15,9 @@ The backend for this project is hosted on GitHub. You can find it here: [Backend
 This project uses Socket.IO for real-time features. The Socket.IO setup and related code can be found here: [Socket.IO Repository](https://github.com/priyanshu-mandloi/PM-Real-Estate-Socket.io.git)
 
 ## Project Setup
-
-To get the project up and running locally, follow these steps:
-
 ### Frontend
 
-1. Clone the repository:
+ Clone the repository:
    ```bash
    git clone https://github.com/priyanshu-mandloi/Pm-Real-Estate-ui.git
    cd your-frontend-repo
