@@ -22,5 +22,5 @@ To get the project up and running locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone (https://github.com/priyanshu-mandloi/Pm-Real-Estate-ui.git)
+   git clone https://github.com/priyanshu-mandloi/Pm-Real-Estate-ui.git
    cd your-frontend-repo
