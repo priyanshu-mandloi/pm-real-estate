@@ -6,6 +6,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import Pin from "../pin/Pin";
 
 function Map({ items }) {
+  console.log(items);
   return (
     <MapContainer
       center={

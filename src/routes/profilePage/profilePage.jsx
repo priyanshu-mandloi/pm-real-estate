@@ -34,6 +34,11 @@ function ProfilePage() {
               <button>Update Profile</button>
             </Link>
           </div>
+          <div className="title">
+            <Link to="/profile/delete">
+              <button>Delete Profile</button>
+            </Link>
+          </div>
           <div className="info">
             <span>
               Avatar:

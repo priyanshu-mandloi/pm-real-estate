@@ -71,12 +71,12 @@
     }
 
     img {
-      width: 115%;
+      width: 100%;
       position: absolute;
       right: 0;
 
       @include lg {
-        width: 105%;
+        width: 100%;
       }
     }
   }

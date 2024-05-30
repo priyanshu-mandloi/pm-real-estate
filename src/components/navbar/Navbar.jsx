@@ -58,8 +58,20 @@ function Navbar() {
           <a href="/">About</a>
           <a href="/contact">Contact</a>
           <a href="/description">Description</a>
-          <a href="/login">Sign in</a>
-          <a href="/register">Sign up</a>
+
+          {currentUser ? (
+            <Link to="/profile" className="profile">
+              {number > 0 && <div className="notification">{number}</div>}
+              <span>Profile</span>
+            </Link>
+          ) : (
+            <>
+              <a href="/login">Sign in</a>
+              <a href="/register" className="register">
+                Sign up
+              </a>
+            </>
+          )}
         </div>
       </div>
     </nav>

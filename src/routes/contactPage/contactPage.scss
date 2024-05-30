@@ -1,3 +1,82 @@
+// .contact-section {
+//   width: 80%;
+//   margin: 2rem auto;
+//   padding: 2rem;
+//   background-color: #fafafa;
+//   border-radius: 10px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+//   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+//   h1 {
+//     color: #2c3e50;
+//     font-size: 2rem;
+//     margin-bottom: 1rem;
+//     font-weight: 700;
+//   }
+
+//   .intro-text {
+//     color: #34495e;
+//     font-size: 1.2rem;
+//     margin-bottom: 2rem;
+//     font-weight: 400;
+//     line-height: 1.5;
+//   }
+
+//   .contact-info {
+//     display: flex;
+//     justify-content: space-around;
+//     margin-bottom: 2rem;
+
+//     .contact-item {
+//       text-align: left;
+
+//       h2 {
+//         color: #2980b9;
+//         margin-bottom: 0.5rem;
+//         font-size: 1.5rem;
+//         font-weight: 600;
+//       }
+
+//       .highlight-box {
+//         display: inline-block;
+//         padding: 0.5rem 1rem;
+//         background-color: #eaf2f8;
+//         border: 1px solid #d0e1f9;
+//         border-radius: 5px;
+//         color: #3498db;
+//         text-decoration: none;
+//         font-size: 1.1rem;
+//         font-weight: 500;
+//         transition: background-color 0.3s, border-color 0.3s;
+
+//         &:hover {
+//           background-color: #d0e1f9;
+//           border-color: #a4c8f0;
+//         }
+
+//         &:nth-child(1) {
+//           color: #e74c3c; // Phone number color
+//         }
+
+//         &:nth-child(2) {
+//           color: #8e44ad; // Email color
+//         }
+//       }
+//     }
+//   }
+
+//   .footer-text {
+//     color: #34495e;
+//     font-size: 1.2rem;
+//     margin-top: 2rem;
+//     font-weight: 400;
+//     line-height: 1.5;
+//   }
+// }
+
+@import "../../responsive.scss";
+
 .contact-section {
   width: 80%;
   margin: 2rem auto;
@@ -72,5 +151,96 @@
     margin-top: 2rem;
     font-weight: 400;
     line-height: 1.5;
+  }
+
+  // Responsiveness
+  @include sm {
+    width: 95%;
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .intro-text {
+      font-size: 1rem;
+    }
+
+    .contact-info {
+      flex-direction: column;
+
+      .contact-item {
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        .highlight-box {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .footer-text {
+      font-size: 1rem;
+    }
+  }
+
+  @include md {
+    width: 90%;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+    }
+
+    .contact-info {
+      .contact-item {
+        h2 {
+          font-size: 1.4rem;
+        }
+
+        .highlight-box {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .footer-text {
+      font-size: 1.1rem;
+    }
+  }
+
+  @include lg {
+    width: 85%;
+
+    h1 {
+      font-size: 1.9rem;
+      // font-size: 0.9rem;
+    }
+
+    .intro-text {
+      font-size: 1.15rem;
+    }
+
+    .contact-info {
+      .contact-item {
+        h2 {
+          font-size: 1.45rem;
+        }
+
+        .highlight-box {
+          font-size: 0.9 rem;
+        }
+      }
+    }
+
+    .footer-text {
+      font-size: 1.15rem;
+    }
   }
 }

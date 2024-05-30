@@ -7,6 +7,7 @@ import {
 } from "./lib/loaders";
 
 import Contact from "./routes/contactPage/contactPage";
+import DeleteUpdatePage from "./routes/profileDeletePage/profileDeletePage";
 import Description from "./routes/descriptionPage/descriptionPage";
 import HomePage from "./routes/homePage/homePage";
 import ListPage from "./routes/listPage/listPage";
@@ -68,6 +69,10 @@ function App() {
         {
           path: "/profile/update",
           element: <ProfileUpdatePage />,
+        },
+        {
+          path: "/profile/delete",
+          element: <DeleteUpdatePage />,
         },
         {
           path: "/add",

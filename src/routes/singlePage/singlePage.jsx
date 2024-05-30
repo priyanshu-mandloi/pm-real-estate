@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 
 function SinglePage() {
   const post = useLoaderData();
+  // console.log(post.longitude);
   const [saved, setSaved] = useState(post.isSaved);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
