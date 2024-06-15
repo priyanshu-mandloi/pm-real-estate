@@ -24,7 +24,16 @@ function SinglePage() {
     }
     setSaved((prev) => !prev);
     try {
-      await apiRequest.post("/users/save", { postId: post.id });
+      await apiRequest.post(
+        "/users/save",
+        { postId: post.id },
+        {
+          headers: {
+            Authorization:
+              "Bearer AvZm8PVGeSiLEggxebrHt3FqIO2IwTJeJ4NiQtLJ9c8=",
+          },
+        }
+      );
     } catch (err) {
       console.log(err);
       setSaved((prev) => !prev);

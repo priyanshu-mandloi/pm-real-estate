@@ -21,3 +21,4 @@ export const profilePageLoader = async () => {
     chatResponse: chatPromise,
   });
 };
+

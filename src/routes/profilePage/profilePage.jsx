@@ -10,14 +10,17 @@ import apiRequest from "../../lib/apiRequest";
 
 function ProfilePage() {
   const data = useLoaderData();
-
   const { updateUser, currentUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await apiRequest.post("/auth/logout");
+      await apiRequest.post("/auth/logout", null, {
+        headers: {
+          Authorization: "Bearer AvZm8PVGeSiLEggxebrHt3FqIO2IwTJeJ4NiQtLJ9c8=",
+        },
+      });
       updateUser(null);
       navigate("/");
     } catch (err) {
