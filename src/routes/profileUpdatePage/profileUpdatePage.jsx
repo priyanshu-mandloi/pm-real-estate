@@ -21,12 +21,21 @@ function ProfileUpdatePage() {
     const { username, email, password } = Object.fromEntries(formData);
 
     try {
-      const res = await apiRequest.put(`/users/${currentUser.id}`, {
-        username,
-        email,
-        password,
-        avatar: avatar[0],
-      });
+      const res = await apiRequest.put(
+        `/users/${currentUser.id}`,
+        {
+          username,
+          email,
+          password,
+          avatar: avatar[0],
+        },
+        {
+          headers: {
+            Authorization:
+              "Bearer AvZm8PVGeSiLEggxebrHt3FqIO2IwTJeJ4NiQtLJ9c8=",
+          },
+        }
+      );
       updateUser(res.data);
       navigate("/profile");
     } catch (err) {

@@ -13,7 +13,11 @@ function ProfileDeletePage() {
 
   const handleDelete = async () => {
     try {
-      await apiRequest.delete(`/users/${currentUser.id}`);
+      await apiRequest.delete(`/users/${currentUser.id}`, {
+        headers: {
+          Authorization: "Bearer AvZm8PVGeSiLEggxebrHt3FqIO2IwTJeJ4NiQtLJ9c8=",
+        },
+      });
       updateUser(null); // Clear the user from context
       navigate("/"); // Navigate to the homepage or login page
     } catch (err) {
