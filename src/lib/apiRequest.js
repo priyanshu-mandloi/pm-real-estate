@@ -9,7 +9,3 @@ const apiRequest = axios.create({
 }); 
 export default apiRequest;
 
-
-
-
-// baseURL: "https://pm-estate-backend.onrender.com/api",
