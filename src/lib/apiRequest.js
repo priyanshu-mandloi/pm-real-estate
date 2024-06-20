@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiRequest = axios.create({
-  baseURL: "http://localhost:8800/api",
+  baseURL: "https://api.priyanshumandloi.tech/api",
   // baseURL: "https://pm-estate-backend-fazp.vercel.app/api",
   // baseURL: "https://pm-real-estate-backend.onrender.com/api",
   // baseURL: "priyanshumandloi.tech/api",
