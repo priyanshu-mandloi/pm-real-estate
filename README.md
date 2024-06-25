@@ -4,7 +4,7 @@ This project is a React-based UI design for a real estate application. It featur
 
 ## Live Link
 
-Check out the live application here: [React Real Estate UI Design](https://pm-real-estate.vercel.app/)
+Check out the live application here: [React Real Estate UI Design](https://www.priyanshumandloi.tech/)
 
 ## Backend Repository
 
