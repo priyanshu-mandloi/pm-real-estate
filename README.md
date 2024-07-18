@@ -6,6 +6,11 @@ This project is a React-based UI design for a real estate application. It featur
 
 Check out the live application here: [React Real Estate UI Design](https://pmrealestate-priyanshu-mandlois-projects.vercel.app/)
 
+## Eraser.io 
+
+Check out the Logic for models here: [React Real Estate Eraser.io file](https://app.eraser.io/workspace/7l8Kx4DGXwhKHYxUFPZj)
+
+
 ## Backend Repository
 
 The backend for this project is hosted on GitHub. You can find it here: [Backend Repository](https://github.com/priyanshu-mandloi/backend.git)
