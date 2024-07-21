@@ -8,7 +8,7 @@ import { useNotificationStore } from "../../lib/notificationStore";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-
+  // here we are using the context provided by the parent component
   const { currentUser } = useContext(AuthContext);
 
   const fetch = useNotificationStore((state) => state.fetch);

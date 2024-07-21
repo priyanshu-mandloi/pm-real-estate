@@ -6,6 +6,7 @@ import { AuthContextProvider } from "./context/AuthContext.jsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { SocketContextProvider } from "./context/SocketContext.jsx";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { ToastContainer } from "react-toastify";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthContextProvider>
       <SocketContextProvider>
         <ToastContainer />
+        <SpeedInsights />
         <App />
       </SocketContextProvider>
     </AuthContextProvider>

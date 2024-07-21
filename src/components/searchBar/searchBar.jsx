@@ -57,6 +57,7 @@ function SearchBar() {
           placeholder="Max Price"
           onChange={handleChange}
         />
+        {/* So we have made here an special query that will help us to get the desired result */}
         <Link
           to={`/list?type=${query.type}&city=${query.city}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`}
         >

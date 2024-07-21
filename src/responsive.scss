@@ -1,16 +1,19 @@
 @mixin sm {
+  // For mobile view
   @media (max-width: 738px) {
     @content;
   }
 }
 
 @mixin md {
+  // for ipad
   @media (max-width: 1024px) {
     @content;
   }
 }
 
 @mixin lg {
+  // for desktop
   @media (max-width: 1366px) {
     @content;
   }

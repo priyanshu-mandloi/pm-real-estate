@@ -11,7 +11,7 @@
       text-transform: capitalize;
 
       &.active {
-        background-color: black;
+        background-color: rgb(225, 21, 21);
         color: white;
       }
 
@@ -72,7 +72,7 @@
 
     a {
       flex: 1;
-      background-color: #fece51;
+      background-color: #0fd84b;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -80,7 +80,7 @@
       button {
         border: none;
         cursor: pointer;
-        background-color: #fece51;
+        background-color: #0fd84b;
 
         @include sm {
           padding: 10px;
