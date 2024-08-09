@@ -1,9 +1,18 @@
 @import "../../responsive.scss";
+
 nav {
   display: flex;
   justify-content: space-between;
   height: 100px;
   align-items: center;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+
+  &.darkMode {
+    background-color: #333;
+    color: #fff;
+  }
+
   a {
     transition: all 0.4s ease;
     @include sm {
@@ -13,20 +22,24 @@ nav {
       scale: 1.05;
     }
   }
+
   .left {
     flex: 3;
     display: flex;
     align-items: center;
     gap: 50px;
+
     .logo {
       font-weight: bold;
       font-size: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
+
       img {
         width: 28px;
       }
+
       span {
         @include md {
           display: none;
@@ -37,16 +50,18 @@ nav {
       }
     }
   }
+
   .right {
     flex: 2;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: #fcf5f3;
     height: 100%;
+    background-color: #fcf5f3;
     @include md {
       background-color: transparent;
     }
+
     a {
       padding: 12px 24px;
       margin: 20px;
@@ -58,8 +73,8 @@ nav {
       font-weight: bold;
 
       img {
-        width: 46px;
-        height: 46px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
         margin-right: 20px;
@@ -97,6 +112,7 @@ nav {
     .register {
       background-color: #fece51;
     }
+
     .menuIcon {
       display: none;
       z-index: 999;
@@ -109,6 +125,7 @@ nav {
         display: inline;
       }
     }
+
     .menu {
       position: absolute;
       top: 0;
@@ -123,13 +140,28 @@ nav {
       align-items: center;
       justify-content: center;
       font-size: 24px;
+
       &.active {
         right: 0;
       }
+
       @include sm {
         a {
           display: initial;
         }
+      }
+    }
+
+    .darkModeToggle {
+      background-color: #fece51;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #f8b400;
       }
     }
   }
