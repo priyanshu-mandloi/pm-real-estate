@@ -33,7 +33,7 @@ function HomePage({ isDarkMode }) {
         <h2>Newly Launched Projects</h2>
         <div className="projectVideo">
           <video autoPlay loop muted>
-            <source src="/home.MOV" />
+            <source src="/home.mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
