@@ -1,6 +1,10 @@
 import { Layout, RequireAuth } from "./routes/layout/layout";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
+import {
+  listPageLoader,
+  profilePageLoader,
+  singlePageLoader,
+} from "./lib/loaders";
 
 import Contact from "./routes/contactPage/contactPage";
 import DeleteUpdatePage from "./routes/profileDeletePage/profileDeletePage";
@@ -13,7 +17,6 @@ import ProfilePage from "./routes/profilePage/profilePage";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import Register from "./routes/register/register";
 import SinglePage from "./routes/singlePage/singlePage";
-import { SpeedInsights } from '@vercel/speed-insights/react'; // Import SpeedInsights
 
 function App() {
   const router = createBrowserRouter([
@@ -21,33 +24,64 @@ function App() {
       path: "/",
       element: <Layout />,
       children: [
-        { path: "/", element: <HomePage /> },
-        { path: "/list", element: <ListPage />, loader: listPageLoader },
-        { path: "/:id", element: <SinglePage />, loader: singlePageLoader },
-        { path: "/login", element: <Login /> },
-        { path: "/register", element: <Register /> },
-        { path: "/contact", element: <Contact /> },
-        { path: "/description", element: <Description /> },
+        {
+          path: "/",
+          element: <HomePage />,
+        },
+        {
+          path: "/list",
+          element: <ListPage />,
+          loader: listPageLoader,
+        },
+        {
+          path: "/:id",
+          element: <SinglePage />,
+          loader: singlePageLoader,
+        },
+
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/description",
+          element: <Description />,
+        },
       ],
     },
     {
       path: "/",
       element: <RequireAuth />,
       children: [
-        { path: "/profile", element: <ProfilePage />, loader: profilePageLoader },
-        { path: "/profile/update", element: <ProfileUpdatePage /> },
-        { path: "/profile/delete", element: <DeleteUpdatePage /> },
-        { path: "/add", element: <NewPostPage /> },
+        {
+          path: "/profile",
+          element: <ProfilePage />,
+          loader: profilePageLoader,
+        },
+        {
+          path: "/profile/update",
+          element: <ProfileUpdatePage />,
+        },
+        {
+          path: "/profile/delete",
+          element: <DeleteUpdatePage />,
+        },
+        {
+          path: "/add",
+          element: <NewPostPage />,
+        },
       ],
     },
   ]);
-
-  return (
-    <div>
-      <RouterProvider router={router} />
-      <SpeedInsights /> {/* Add the SpeedInsights component */}
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
