@@ -115,7 +115,7 @@ nav {
 
     .menuIcon {
       display: none;
-      z-index: 999;
+      z-index: 9999;
       img {
         width: 36px;
         height: 36px;
@@ -143,6 +143,7 @@ nav {
 
       &.active {
         right: 0;
+        z-index: 999;
       }
 
       @include sm {
